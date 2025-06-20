@@ -78,5 +78,6 @@ if button_run == True:
          "Outstanding_Debt"]])
     df_predict.loc[0] = [age, annual_income, number_bank_accounts, number_credit_card, interest_rate, number_of_loan,
                          outstanding_debt]
+    df_predict
     st.write("Probability to be good borrower")
  #   st.write("Probability to be good borrower" ,(model_load.predict_proba( df_predict  )[:,1]*100)[0].astype(int) )
