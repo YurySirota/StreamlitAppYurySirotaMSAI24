@@ -64,22 +64,19 @@ interest_rate = st.slider(
 )
 
 
-
 st.header("Run credit scoring")
 
-st.write(os.getcwd())
+model_load = pickle.load(open('model.pickle', 'rb'))
+
 
 button_run = st.button("Run credit scoring")
 if button_run == True:
-    model_load = pickle.load(open('\\mount\\src\\streamlitappyurysirotamsai24\\model.pickle', 'rb'))
+    # model_load = pickle.load(open('model.pickle', 'rb'))
 
     df_predict = pd.DataFrame(columns=[
         ["Age", "Annual_Income", "Num_Bank_Accounts", "Num_Credit_Card", "Interest_Rate", "Num_of_Loan",
          "Outstanding_Debt"]])
     df_predict.loc[0] = [age, annual_income, number_bank_accounts, number_credit_card, interest_rate, number_of_loan,
                          outstanding_debt]
-
+    st.write("Probability to be good borrower")
     st.write("Probability to be good borrower" ,(model_load.predict_proba( df_predict  )[:,1]*100)[0].astype(int) )
-
-
-
