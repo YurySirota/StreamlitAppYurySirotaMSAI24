@@ -71,7 +71,7 @@ st.write(os.getcwd())
 
 button_run = st.button("Run credit scoring")
 if button_run == True:
-    model_load = pickle.load(open('/mount/src/streamlitappyurysirotamsai24/model.pickle', 'rb'))
+    model_load = pickle.load(open('\\mount\\src\\streamlitappyurysirotamsai24\\model.pickle', 'rb'))
 
     df_predict = pd.DataFrame(columns=[
         ["Age", "Annual_Income", "Num_Bank_Accounts", "Num_Credit_Card", "Interest_Rate", "Num_of_Loan",
