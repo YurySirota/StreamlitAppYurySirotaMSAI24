@@ -2,6 +2,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 import os
+import sklearn
 
 st.title("Yury Sirota MSAI24 project. Streamlit, docker, scoring tools" )
 
