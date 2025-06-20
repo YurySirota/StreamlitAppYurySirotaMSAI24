@@ -1,6 +1,7 @@
 import streamlit as st
 import pickle
 import pandas as pd
+import os
 
 st.title("Yury Sirota MSAI24 project. Streamlit, docker, scoring tools" )
 
@@ -66,6 +67,7 @@ interest_rate = st.slider(
 
 st.header("Run credit scoring")
 
+st.write(os.getcwd())
 
 button_run = st.button("Run credit scoring")
 if button_run == True:
